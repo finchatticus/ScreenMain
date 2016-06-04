@@ -6,9 +6,11 @@
                  android:icon="@mipmap/ic_launcher"
                  android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"
                  android:largeHeap="true"
+                 android:hardwareAccelerated="false"
             >
 
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -16,5 +18,7 @@
         </activity>
 
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>
