@@ -9,7 +9,6 @@ public class ImageUtil {
     private int densityHeight;
     private int densityWidth;
 
-
     public ImageUtil(int resourceId, Context context) {
         BitmapDrawable bitmapDrawable = (BitmapDrawable) context.getResources().getDrawable(resourceId);
         DisplayUtil displayUtil = new DisplayUtil(context);

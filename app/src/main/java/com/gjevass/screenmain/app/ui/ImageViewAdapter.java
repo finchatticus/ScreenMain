@@ -1,29 +1,13 @@
 package com.gjevass.screenmain.app.ui;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import com.gjevass.screenmain.app.R;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.ImageSize;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
-import com.squareup.picasso.MemoryPolicy;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,12 +48,6 @@ public class ImageViewAdapter extends BaseAdapter {
         lp.setMargins(0,imageViewModel.getMarginTop(),0,imageViewModel.getMarginBottom());
         imageView.setLayoutParams(lp);
 
-        //imageView.setMaxHeight(imageViewModel.getImageHeight());
-        //imageView.setMaxHeight(imageViewModel.getImageWidth());
-
-
-        Log.d("1", "max height " + imageView.getMaxHeight());
-        Log.d("1", "max width "  + imageView.getMaxWidth());
         imageView.setImageBitmap(imageViewModel.getBitmap());
         return rowView;
     }

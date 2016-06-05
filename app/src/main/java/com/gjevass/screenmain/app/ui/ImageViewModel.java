@@ -3,8 +3,6 @@ package com.gjevass.screenmain.app.ui;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.view.Display;
 import com.gjevass.screenmain.app.util.DisplayUtil;
 import com.gjevass.screenmain.app.util.ImageUtil;
 
@@ -50,6 +48,14 @@ public class ImageViewModel {
         this.marginTop = marginTop;
     }
 
+    public int getMarginBottom() {
+        return marginBottom;
+    }
+
+    public void setMarginBottom(int marginBottom) {
+        this.marginBottom = marginBottom;
+    }
+
     public int getResourceId() {
         return resourceId;
     }
@@ -66,11 +72,13 @@ public class ImageViewModel {
         this.bitmap = bitmap;
     }
 
-    public int getMarginBottom() {
-        return marginBottom;
-    }
-
-    public void setMarginBottom(int marginBottom) {
-        this.marginBottom = marginBottom;
+    @Override
+    public String toString() {
+        return "ImageViewModel{" +
+                "imageWidth=" + imageWidth +
+                ", imageHeight=" + imageHeight +
+                ", marginTop=" + marginTop +
+                ", marginBottom=" + marginBottom +
+                ", resourceId=" + resourceId + '}';
     }
 }
