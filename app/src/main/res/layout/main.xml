@@ -4,31 +4,6 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <!--com.gjevass.screenmain.app.ResizableImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-    /-->
-
-    <!--com.gjevass.screenmain.app.ProportionalImageView
-            android:id="@+id/imageView"
-            android:src="@drawable/main_part_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:adjustViewBounds="true"
-            /-->
-
-    <!--ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:adjustViewBounds="true"
-            android:id="@+id/imageView"
-            android:layout_gravity="center_horizontal"/-->
-
     <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

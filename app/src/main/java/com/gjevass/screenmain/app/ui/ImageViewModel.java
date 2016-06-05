@@ -13,6 +13,8 @@ public class ImageViewModel {
     private int marginBottom;
     private int resourceId;
     private Bitmap bitmap;
+    private int element0ResourceId;
+    private Bitmap bitmapElement1;
 
     public ImageViewModel(int resourceId, Context context) {
         this.resourceId = resourceId;

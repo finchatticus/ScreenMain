@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/item_layout"
               android:orientation="vertical"
               android:layout_width="match_parent"
@@ -11,6 +11,35 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:id="@+id/itemImageView"
-            android:layout_gravity="center_horizontal" android:contentDescription="main part images"/>
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/image_view_content_description"/>
 
-</LinearLayout>
+
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:contentDescription="@string/image_view_content_description_element0"
+                       android:id="@+id/imageViewEl0"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:contentDescription="@string/image_view_content_description_element1"
+                       android:id="@+id/imageViewEl1"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:contentDescription="@string/image_view_content_description_element2"
+                       android:id="@+id/imageViewEl2"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:contentDescription="@string/image_view_content_description_element3"
+                       android:id="@+id/imageViewEl3"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:contentDescription="@string/image_view_content_description_element4"
+                       android:id="@+id/imageViewEl4"/>
+
+
+</FrameLayout>
