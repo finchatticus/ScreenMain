@@ -53,7 +53,7 @@ public class ImageViewAdapter extends BaseAdapter {
 
         ImageView imageViewBackground = (ImageView) view.findViewById(R.id.itemImageView);
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(imageViewBackground.getLayoutParams());
-        lp.setMargins(0,imageViewModel.getMarginTop(),0,imageViewModel.getMarginBottom());
+        lp.setMargins(0, imageViewModel.getMarginTop(), 0, imageViewModel.getMarginBottom());
         imageViewBackground.setLayoutParams(lp);
         imageViewBackground.setImageBitmap(imageViewModel.getBitmap());
 
@@ -65,66 +65,72 @@ public class ImageViewAdapter extends BaseAdapter {
 
         if (posters != null && elements != null) {
             if(i == 1) {
-                Bitmap bitmapFrame = BitmapFactory.decodeResource(context.getResources(), R.drawable.main_poster_frame);
-                Bitmap bitmapFrameScaled = Bitmap.createScaledBitmap(bitmapFrame, 224, 312, true);
-
                 //poster 1
-                FrameLayout.LayoutParams lp1 = new FrameLayout.LayoutParams(imageView0.getLayoutParams());
-                lp1.setMargins(130,617,0,0);
-                imageView0.setLayoutParams(lp1);
+                FrameLayout.LayoutParams lp0 = new FrameLayout.LayoutParams(imageView0.getLayoutParams());
+                lp0.setMargins(130, 617, 0, 0);
+                imageView0.setLayoutParams(lp0);
                 imageView0.setRotation(3);
                 imageView0.setImageBitmap(posters.get(0));
 
                 //poster 2
-                FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(imageView3.getLayoutParams());
-                lp2.setMargins(334,677,0,0);
-                imageView3.setLayoutParams(lp2);
+                FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(imageView3.getLayoutParams());
+                lp3.setMargins(334, 677, 0, 0);
+                imageView3.setLayoutParams(lp3);
                 imageView3.setRotation(-1);
                 imageView3.setImageBitmap(posters.get(1));
 
                 //poster frame
-                FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(imageView1.getLayoutParams());
-                lp3.setMargins(124,611,0,0);
-                imageView1.setLayoutParams(lp3);
+                Bitmap bitmapFrame = Bitmap.createScaledBitmap(elements.get(0), 224, 312, true);
+                FrameLayout.LayoutParams lp1 = new FrameLayout.LayoutParams(imageView1.getLayoutParams());
+                lp1.setMargins(124, 611, 0, 0);
+                imageView1.setLayoutParams(lp1);
                 imageView1.setRotation(3);
-                imageView1.setImageBitmap(bitmapFrameScaled);
+                imageView1.setImageBitmap(bitmapFrame);
 
                 //poster frame
-                FrameLayout.LayoutParams lp4 = new FrameLayout.LayoutParams(imageView2.getLayoutParams());
-                lp4.setMargins(328,671,0,0);
-                imageView2.setLayoutParams(lp4);
+                FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(imageView2.getLayoutParams());
+                lp2.setMargins(328, 671, 0, 0);
+                imageView2.setLayoutParams(lp2);
                 imageView2.setRotation(-1);
-                imageView2.setImageBitmap(bitmapFrameScaled);
-
-
-                Bitmap bitmapSticks = BitmapFactory.decodeResource(context.getResources(), R.drawable.main_sticks);
-                Bitmap bitmapSticksScaled = Bitmap.createScaledBitmap(bitmapSticks, 455, 400, true);
+                imageView2.setImageBitmap(bitmapFrame);
 
                 //sticks frame
-                FrameLayout.LayoutParams lp5 = new FrameLayout.LayoutParams(imageView4.getLayoutParams());
-                lp5.setMargins(110,595,0,0);
-                imageView4.setLayoutParams(lp5);
-                imageView4.setImageBitmap(bitmapSticksScaled);
+                Bitmap bitmapSticks = Bitmap.createScaledBitmap(elements.get(1), 455, 400, true);
+                FrameLayout.LayoutParams lp4 = new FrameLayout.LayoutParams(imageView4.getLayoutParams());
+                lp4.setMargins(110, 595, 0, 0);
+                imageView4.setLayoutParams(lp4);
+                imageView4.setImageBitmap(bitmapSticks);
             }
             if(i == 3) {
-                imageView2.setVisibility(View.INVISIBLE);
-                imageView3.setVisibility(View.INVISIBLE);
                 imageView4.setVisibility(View.INVISIBLE);
 
                 //poster 1
-                FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(imageView0.getLayoutParams());
-                lp3.setMargins(84,1100,0,0);
-                imageView0.setLayoutParams(lp3);
+                FrameLayout.LayoutParams lp0 = new FrameLayout.LayoutParams(imageView0.getLayoutParams());
+                lp0.setMargins(84, 1100, 0, 0);
+                imageView0.setLayoutParams(lp0);
                 imageView0.setRotation(2);
                 imageView0.setImageBitmap(posters.get(2));
 
                 //poster 2
-                FrameLayout.LayoutParams lp4 = new FrameLayout.LayoutParams(imageView1.getLayoutParams());
-                lp4.setMargins(372,1098,0,0);
-                imageView1.setLayoutParams(lp4);
+                FrameLayout.LayoutParams lp1 = new FrameLayout.LayoutParams(imageView1.getLayoutParams());
+                lp1.setMargins(372, 1098, 0, 0);
+                imageView1.setLayoutParams(lp1);
                 imageView1.setRotation(2.5f);
                 imageView1.setImageBitmap(posters.get(3));
+
+                //pin
+                FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams(imageView2.getLayoutParams());
+                lp2.setMargins(212, 206, 0, 0);
+                imageView2.setLayoutParams(lp2);
+                imageView2.setImageBitmap(elements.get(2));
+
+                //light
+                FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams(imageView3.getLayoutParams());
+                lp3.setMargins(344, 495, 0, 0);
+                imageView3.setLayoutParams(lp3);
+                imageView3.setImageBitmap(elements.get(3));
             }
+
         }
 
         return view;

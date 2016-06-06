@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
         posterTask.execute();
 
         ElementsTask elementsTask = new ElementsTask();
-        elementsTask.execute(R.drawable.main_poster_frame, R.drawable.main_sticks, R.drawable.main_light, R.drawable.main_pin);
+        elementsTask.execute(R.drawable.main_poster_frame, R.drawable.main_sticks, R.drawable.main_pin, R.drawable.main_light);
     }
 
     private class PosterTask extends AsyncTask<Void, Void, List<Bitmap>> {
