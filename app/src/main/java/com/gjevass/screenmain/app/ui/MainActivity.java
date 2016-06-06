@@ -2,6 +2,7 @@ package com.gjevass.screenmain.app.ui;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,15 +24,15 @@ public class MainActivity extends Activity {
         DisplayUtil displayUtil = new DisplayUtil(this);
         System.out.println(displayUtil.toString());
 
-        int resources[] = { R.drawable.main_part_0,
+        int posters[] = { R.drawable.main_part_0,
                             R.drawable.main_part_1,
                             R.drawable.main_part_2,
                             R.drawable.main_part_3,
                             R.drawable.main_part_4 };
 
         List<ImageViewModel> imagesList = new ArrayList<ImageViewModel>();
-        for (int i = 0; i < resources.length; i++) {
-            imagesList.add(new ImageViewModel(resources[i], this));
+        for (int i = 0; i < posters.length; i++) {
+            imagesList.add(new ImageViewModel(posters[i], this));
         }
         imagesList.get(0).setMarginTop(-1000);
         imagesList.get(4).setMarginBottom(-1000);
@@ -42,6 +43,9 @@ public class MainActivity extends Activity {
 
         PosterTask posterTask = new PosterTask();
         posterTask.execute();
+
+        ElementsTask elementsTask = new ElementsTask();
+        elementsTask.execute(R.drawable.main_poster_frame, R.drawable.main_sticks, R.drawable.main_light, R.drawable.main_pin);
     }
 
     private class PosterTask extends AsyncTask<Void, Void, List<Bitmap>> {
@@ -61,6 +65,30 @@ public class MainActivity extends Activity {
             imageViewAdapter.setPosters(posters);
             imageViewAdapter.notifyDataSetChanged();
             Log.v(TAG, "onPostExecute");
+        }
+    }
+
+    private class ElementsTask extends AsyncTask<Integer, Void, List<Bitmap>> {
+        private String TAG = ElementsTask.class.getSimpleName();
+
+        @Override
+        protected List<Bitmap> doInBackground(Integer ... integers) {
+            Log.v(TAG, "doInBackground");
+            List<Bitmap> elements = new ArrayList<Bitmap>();
+            for (Integer integer : integers) {
+                Bitmap bitmap = BitmapFactory.decodeResource(getApplicationContext().getResources(), integer);
+                elements.add(bitmap);
+            }
+            return elements;
+        }
+
+        @Override
+        protected void onPostExecute(List<Bitmap> elements) {
+            super.onPostExecute(elements);
+            imageViewAdapter.setElements(elements);
+            imageViewAdapter.notifyDataSetChanged();
+            Log.v(TAG, "onPostExecute");
+
         }
     }
 
